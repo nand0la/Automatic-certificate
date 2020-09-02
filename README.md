@@ -10,7 +10,7 @@ Python script that assembles certificates based on an excel spreadsheet
 ## How to use
 - Open to files
 - Put the templates in the "template_certificate" folder
-- Coloque a planilha na pasta "planilha_alunos"
+- place the spreadsheet in the "planilha_alunos"
 
 Depending on the sheet used in the spreadsheet, the 
 ```python
