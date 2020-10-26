@@ -1,6 +1,9 @@
-from PIL import Image, ImageFont, ImageDraw
 import xlrd
 import sys
+
+from PIL import Image, ImageFont, ImageDraw
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
 
 class ListCertificate:
@@ -57,9 +60,11 @@ class ListCertificate:
 
 
 if __name__ == "__main__":
-    font_path = "/home/fernando/Documentos/projetos/Automatic-certificate/BalsamiqSans-Regular.ttf"
-    template_path = "/home/fernando/Documentos/projetos/Automatic-certificate/template_certificado/template_certificado1.png"
-    excel_file_path = "/home/fernando/Documentos/projetos/Automatic-certificate/planilha_alunos/alunos.xlsx"
+    Tk().withdraw()  # we don't want a full GUI, so keep the root window from appearing
+
+    font_path = askopenfilename(title="Select the font")
+    template_path = askopenfilename(title="Select the image template")
+    excel_file_path = askopenfilename(title="select the excel file")
 
     certificados = ListCertificate(font_path, template_path, excel_file_path)
     alunos_form_lista = certificados.return_list_students()
