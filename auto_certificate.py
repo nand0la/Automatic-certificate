@@ -38,11 +38,7 @@ class ListCertificate:
         for aluno in lista_alunos:
             print(aluno)
 
-    def do_certificate(
-        self,
-        lista,
-        pos_font=[100, 100],
-    ):
+    def do_certificate(self, lista, pos_font=[100, 100]):
         img_font = ImageFont.truetype(self.font_path, 90)
 
         for student_name in lista:
@@ -66,6 +62,8 @@ if __name__ == "__main__":
     template_path = askopenfilename(title="Select the image template")
     excel_file_path = askopenfilename(title="select the excel file")
 
-    certificados = ListCertificate(font_path, template_path, excel_file_path)
+    certificados = ListCertificate(
+        font_path, template_path, excel_file_path, index_colunm_name=1
+    )
     alunos_form_lista = certificados.return_list_students()
     certificados.do_certificate(alunos_form_lista)
